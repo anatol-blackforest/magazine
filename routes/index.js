@@ -5,4 +5,4 @@ const categoryRoutes = require('./category')
 const orderRoutes = require('./order')
 const positionRoutes = require('./position')
 
-module.exporta = {authRoutes, analyticsRoutes, categoryRoutes, orderRoutes, positionRoutes}
+module.exports = {authRoutes, analyticsRoutes, categoryRoutes, orderRoutes, positionRoutes}

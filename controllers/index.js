@@ -5,4 +5,4 @@ const auth = require('./auth')
 const order = require('./order')
 const position = require('./position')
 
-module.exporta = {analytics, auth, category, order, position}
+module.exports = {analytics, auth, category, order, position}
