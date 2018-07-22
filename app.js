@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const {authRoutes, analyticsRoutes, categoryRoutes, orderRoutes, positionRoutes} = require('./routes')
 const {connection} = require('./middleware/')
 const app = express()
+const authenticate = passport.authenticate('jwt', {session: false})
 
 app.use(async(req, res, next) => await connection(req, next))
 app.use(passport.initialize())
@@ -17,11 +18,10 @@ app.use(bodyParser.json())
 app.use(require('cors')())
 
 app.use('/api/auth', authRoutes)
-app.use(passport.authenticate('jwt', {session: false}))
-app.use('/api/analytics', analyticsRoutes)
-app.use('/api/category', categoryRoutes)
-app.use('/api/order', orderRoutes)
-app.use('/api/position', positionRoutes)
+app.use('/api/analytics',authenticate, analyticsRoutes)
+app.use('/api/category', authenticate, categoryRoutes)
+app.use('/api/order', authenticate, orderRoutes)
+app.use('/api/position', authenticate, positionRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/dist/client'))
