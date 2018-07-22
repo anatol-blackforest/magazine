@@ -1,4 +1,4 @@
-const Position = require('../models/Position')
+const {Position} = require('../models')
 const errorHandler = require('../utils/errorHandler')
 
 module.exports.getByCategoryId = async function(req, res) {

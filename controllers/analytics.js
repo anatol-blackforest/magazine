@@ -1,5 +1,5 @@
 const moment = require('moment')
-const Order = require('../models/Order')
+const {Order} = require('../models')
 const errorHandler = require('../utils/errorHandler')
 
 module.exports.overview = async function(req, res) {

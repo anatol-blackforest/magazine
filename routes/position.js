@@ -1,11 +1,11 @@
 const express = require('express')
 const passport = require('passport')
-const controller = require('../controllers/position')
+const {position} = require('../controllers/')
 const router = express.Router()
 
-router.get('/:categoryId', controller.getByCategoryId)
-router.post('/', controller.create)
-router.patch('/:id', controller.update)
-router.delete('/:id', controller.remove)
+router.get('/:categoryId', position.getByCategoryId)
+router.post('/', position.create)
+router.patch('/:id', position.update)
+router.delete('/:id', position.remove)
 
 module.exports = router

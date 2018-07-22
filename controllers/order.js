@@ -1,4 +1,4 @@
-const Order = require('../models/Order')
+const {Order} = require('../models')
 const errorHandler = require('../utils/errorHandler')
 
 // (get) localhost:5000/api/order?offset=2&limit=5

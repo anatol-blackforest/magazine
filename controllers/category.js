@@ -1,5 +1,4 @@
-const Category = require('../models/Category')
-const Position = require('../models/Position')
+const {Category, Position} = require('../models')
 const errorHandler = require('../utils/errorHandler')
 
 module.exports.getAll = async function(req, res) {

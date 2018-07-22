@@ -1,9 +1,9 @@
 const express = require('express')
 const passport = require('passport')
-const controller = require('../controllers/analytics')
+const {analytics} = require('../controllers')
 const router = express.Router()
 
-router.get('/overview', controller.overview)
-router.get('/analytics', controller.analytics)
+router.get('/overview', analytics.overview)
+router.get('/analytics', analytics.analytics)
 
 module.exports = router

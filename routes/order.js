@@ -1,9 +1,9 @@
 const express = require('express')
 const passport = require('passport')
-const controller = require('../controllers/order')
+const {order} = require('../controllers/')
 const router = express.Router()
 
-router.get('/', controller.getAll)
-router.post('/', controller.create)
+router.get('/', order.getAll)
+router.post('/', order.create)
 
 module.exports = router
