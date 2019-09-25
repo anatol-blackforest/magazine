@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 app.use(require('cors')())
 
 app.use('/api/auth', authRoutes)
-app.use('/api/analytics',authenticate, analyticsRoutes)
+app.use('/api/analytics', authenticate, analyticsRoutes)
 app.use('/api/category', authenticate, categoryRoutes)
 app.use('/api/order', authenticate, orderRoutes)
 app.use('/api/position', authenticate, positionRoutes)
